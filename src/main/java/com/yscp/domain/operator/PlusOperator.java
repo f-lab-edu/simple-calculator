@@ -1,4 +1,4 @@
-package com.yscp.domain;
+package com.yscp.domain.operator;
 
 public class PlusOperator implements Operator {
 
