@@ -5,10 +5,10 @@ import com.yscp.domain.operator.OperatorType;
 
 import java.util.List;
 
-public class Calculators {
+public class Calculator {
     private List<Operator> operators;
 
-    public Calculators(List<Operator> operators) {
+    public Calculator(List<Operator> operators) {
         this.operators = operators;
     }
 

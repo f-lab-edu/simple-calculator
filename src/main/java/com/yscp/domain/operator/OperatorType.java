@@ -33,4 +33,12 @@ public enum OperatorType {
         return Optional.ofNullable(MAPPINGS.get(requestType))
                 .orElseThrow(() -> new IllegalArgumentException("Unknown operator type: " + requestType));
     }
+
+    public boolean isPlusOrMinus() {
+        return this.equals(PLUS) || this.equals(MINUS);
+    }
+
+    public boolean isMultiplyOrMod() {
+        return this.equals(MULTIPLY) || this.equals(MOD);
+    }
 }

@@ -1,11 +1,10 @@
 package com.yscp.domain.operator;
 
-import com.yscp.domain.Calculators;
+import com.yscp.domain.Calculator;
 import com.yscp.domain.Number;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -13,12 +12,10 @@ import org.junit.jupiter.params.provider.MethodSource;
 import java.util.List;
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 @DisplayName("Calculators")
-class CalculatorsTest {
+class CalculatorTest {
 
-    private Calculators calculators;
+    private Calculator calculators;
 
     @BeforeEach
     void setUp() {
@@ -26,7 +23,7 @@ class CalculatorsTest {
                 new MinusOperator(),
                 new MultiplyOperator(),
                 new ModOperator());
-        calculators = new Calculators(operators);
+        calculators = new Calculator(operators);
     }
 
     public static Stream<Arguments> validRequest() {

@@ -2,13 +2,14 @@ package com.yscp;
 
 import com.yscp.domain.CalculatorGame;
 import com.yscp.domain.Number;
+import com.yscp.domain.strategy.BasicStrategy;
 
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        CalculatorGame calculatorGame = new CalculatorGame(new BasicStrategy());
         Scanner scanner = new Scanner(System.in);
-        CalculatorGame calculatorGame = new CalculatorGame();
 
         String input;
 
