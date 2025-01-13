@@ -26,20 +26,7 @@ class MultiplyOperatorTest {
     @DisplayName("두 숫자를 곱할 수 있다.")
     @CsvSource(value = {"4,-4,-16", "2,2,4", "-4,-4,16"})
     void itReturnsMultiplyNumber(Integer number1, Integer number2, Integer result) {
-        Assertions.assertThat(operator.operate(number1, number2)).isEqualTo(result);
-    }
-
-
-    @ParameterizedTest
-    @MethodSource("nullParameters")
-    @DisplayName("숫자 중 null 값이 들어올 경우 예외를 던진다.")
-    void itThrowsNullPointerExceptionWhenNumberIsNull(Integer number1, Integer number2) {
-        Assertions.assertThatThrownBy(() -> operator.operate(number1, number2));
-    }
-
-    public static Stream<Arguments> nullParameters() {
-        return Stream.of(Arguments.of(null, 1),
-                Arguments.of(1, null),
-                Arguments.of(null, null));
+        Number resultNumber = new Number(result);
+        Assertions.assertThat(operator.operate(new Number(number1), new Number(number2))).isEqualTo(resultNumber);
     }
 }

@@ -1,5 +1,9 @@
 package com.yscp.domain.operator;
 
+import com.yscp.domain.Number;
+
 public interface Operator {
-    Integer operate(Integer number1, Integer number2);
+    boolean isMatch(OperatorType operatorType);
+
+    Number operate(Number number1, Number number2);
 }

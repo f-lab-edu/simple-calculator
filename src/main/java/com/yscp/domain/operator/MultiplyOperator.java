@@ -1,12 +1,17 @@
 package com.yscp.domain.operator;
 
+import com.yscp.domain.Number;
+
+import java.util.Objects;
+
 public class MultiplyOperator implements Operator {
     @Override
-    public Integer operate(Integer number1, Integer number2) {
-        if (number1 == null || number2 == null) {
-            throw new IllegalArgumentException("Null numbers not allowed");
-        }
+    public boolean isMatch(OperatorType operatorType) {
+        return Objects.equals(OperatorType.MULTIPLY, operatorType);
+    }
 
-        return number1 * number2;
+    @Override
+    public Number operate(Number number1, Number number2) {
+        return number1.multiply(number2);
     }
 }

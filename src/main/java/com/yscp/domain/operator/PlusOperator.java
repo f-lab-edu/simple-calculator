@@ -1,13 +1,17 @@
 package com.yscp.domain.operator;
 
+import com.yscp.domain.Number;
+
 public class PlusOperator implements Operator {
 
     @Override
-    public Integer operate(Integer number1, Integer number2) {
-        if (number1 == null || number2 == null) {
-            throw new IllegalArgumentException("Null numbers not allowed");
-        }
-
-        return number1 + number2;
+    public boolean isMatch(OperatorType operatorType) {
+        return OperatorType.PLUS.equals(operatorType);
     }
+
+    @Override
+    public Number operate(Number number1, Number number2) {
+        return number1.plus(number2);
+    }
+
 }
